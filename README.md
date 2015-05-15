@@ -1,10 +1,17 @@
-# ScoutStatsdRack
+# Scout StatsD Rack
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/scout_statsd_rack`. To experiment with that code, run `bin/console` for an interactive prompt.
+This instruments Ruby applications served by [Rack](http://rack.github.io/) with [StatsD](https://github.com/etsy/statsd/).
+The gem is maintained by [Scout](https://scoutapp.com) for our [hosted StatsD](https://scoutapp.com/statsd) service but it compatible with any StatsD collector.
 
-TODO: Delete this and the text above, and describe your gem
+## Reported Metrics
 
-## Installation
+The following metrics are reported:
+
+* Response code rates (2XX,3XX,4XX,5XX,etc)
+* Response time
+* Request throughput
+
+## Rails Installation
 
 Add this line to your application's Gemfile:
 
@@ -16,19 +23,29 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+That's it! The gem uses a Railtie that automatically includes the middleware instrumentation into your app.
 
-    $ gem install scout_statsd_rack
+## Non-Rails Installation
 
-## Usage
+Add this line to your application's Gemfile:
 
-TODO: Write usage instructions here
+```ruby
+gem 'scout_statsd_rack'
+```
 
-## Development
+And then execute:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
+    $ bundle
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Use the `ScoutStatsdRack` middleware:
+
+    use ScoutStatsdRack::Middleware
+
+## Using with Scout
+
+## Scope
+
+This gem is laser-focused on Rack-related metrics. Other `scout_statsd_X` gems instrument different areas of your code.
 
 ## Contributing
 

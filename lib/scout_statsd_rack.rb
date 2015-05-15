@@ -14,7 +14,6 @@ module ScoutStatsdRack
       (status, headers, body), response_time = call_with_timing(env)
       statsd.timing("response", response_time)
       statsd.increment("response_codes.#{status.to_s.gsub(/\d{2}$/,'xx')}")
-
       # Rack response
       [status, headers, body]
     rescue Exception => exception
