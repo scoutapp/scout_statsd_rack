@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Mark Morris", "Derek Haynes"]
   spec.email         = ["support@scoutapp.com"]
   spec.summary       = %q{Rack application monitoring with StatsD.}
-  spec.description   = %q{Instruments apps served via Rack, reporting key performance metrics.}
+  spec.description   = %q{Rack application monitoring with StatsD: reports key performance metrics for apps served via Rack (throughput, response times, error rates, etc).}
   spec.homepage      = "https://scoutapp.com"
   spec.license       = "MIT"
 
