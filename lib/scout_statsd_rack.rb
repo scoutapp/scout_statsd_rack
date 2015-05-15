@@ -1,4 +1,5 @@
 require "scout_statsd_rack/version"
+require "scout_statsd_rack/railtie"
 require "statsd-ruby"
 
 module ScoutStatsdRack
