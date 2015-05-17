@@ -1,7 +1,9 @@
 # Scout StatsD Rack
 
-This instruments Ruby applications served by [Rack](http://rack.github.io/) with [StatsD](https://github.com/etsy/statsd/).
+The `scout_statsd_rack` gem instruments Ruby applications served by [Rack](http://rack.github.io/) with [StatsD](https://github.com/etsy/statsd/).
 The gem is maintained by [Scout](https://scoutapp.com) for our [hosted StatsD](https://scoutapp.com/statsd) service but is compatible with any StatsD collector.
+
+![rails app monitoring](https://dl.dropboxusercontent.com/u/468982/blog/rack_dash.png)
 
 ## Reported Metrics
 
