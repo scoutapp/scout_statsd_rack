@@ -3,6 +3,10 @@ require "scout_statsd_rack/railtie"
 require "statsd-ruby"
 
 module ScoutStatsdRack
+  def self.statsd
+    @statsd ||= Statsd.new('localhost', 8125)
+  end
+  
   class Middleware
     attr_accessor :app
 
@@ -28,7 +32,7 @@ module ScoutStatsdRack
     end
 
     def statsd
-      @statsd ||= Statsd.new('localhost', 8125)
+      ScoutStatsdRack.statsd
     end
   end
 end
