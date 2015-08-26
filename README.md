@@ -47,6 +47,13 @@ Use the `ScoutStatsdRack` middleware:
 
 Just install the [Scoutd](http://help.scoutapp.com/docs/agent) agent on the host(s) serving the app to see the Rack metrics in the Scout UI.
 
+## Environment Variables
+To define a different hostname or port, please set the following environment variables:
+
+`STATSD_HOST #default: 'localhost'`
+
+`STATSD_PORT #default: 8125`
+
 ## Scope
 
 This gem is laser-focused on Rack-related metrics. Other `scout_statsd_X` gems instrument different areas of your code.

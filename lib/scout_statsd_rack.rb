@@ -2,9 +2,12 @@ require "scout_statsd_rack/version"
 require "scout_statsd_rack/railtie"
 require "statsd-ruby"
 
+ENV['STATSD_HOST'] ||= 'localhost' 
+ENV['STATSD_PORT'] ||= 8125
+
 module ScoutStatsdRack
   def self.statsd
-    @statsd ||= Statsd.new('localhost', 8125)
+    @statsd ||= Statsd.new(ENV['STATSD_HOST'], ENV['STATSD_PORT'])
   end
   
   class Middleware
