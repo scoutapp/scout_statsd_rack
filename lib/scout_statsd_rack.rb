@@ -3,7 +3,7 @@ require "scout_statsd_rack/railtie"
 require "statsd-ruby"
 
 ENV['STATSD_HOST'] ||= 'localhost' 
-ENV['STATSD_PORT'] ||= 8125
+ENV['STATSD_PORT'] ||= '8125'
 
 module ScoutStatsdRack
   def self.statsd
