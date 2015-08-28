@@ -1,5 +1,5 @@
 require "scout_statsd_rack/version"
-require "scout_statsd_rack/railtie"
+require "scout_statsd_rack/railtie" if defined?(Rails)
 require "statsd-ruby"
 
 ENV['STATSD_HOST'] ||= 'localhost' 
